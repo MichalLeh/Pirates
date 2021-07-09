@@ -11,6 +11,7 @@ public class Ship {
         this.poorPirates = new ArrayList<>();
     }
 
+    // add new pirates to the ship. It can have only one captain
     public void add(Pirate pirate) {
         if(!pirate.isCaptain()) {
             this.pirates.add(pirate);
@@ -27,10 +28,12 @@ public class Ship {
         }
     }
 
+    // returns the number of pirates on the ship
     public int getCrewSize(){
         return this.pirates.size();
     }
 
+    // returns a list of names containing the pirates that have a wooden leg and have less than 15 golds
     public ArrayList<String> getPoorPirates(){
         for(Pirate pirate : this.pirates){
             if(pirate.getHasWoodenLeg() && pirate.getGoldAmount() < 15){
@@ -40,6 +43,7 @@ public class Ship {
         return this.poorPirates;
     }
 
+    // returns the sum of gold owned by the pirates of the ship
     public int getGolds(){
         int sumOfGold = 0;
         for(Pirate pirate : this.pirates){
@@ -48,10 +52,12 @@ public class Ship {
         return sumOfGold;
     }
 
+    // calls the pirates' party() method.
     public void lastDayOnTheShip(Pirate pirate){
         pirate.party();
     }
 
+    // calls  pirate's work() and ship's lastDayOnTheShip() methods
     public void prepareForBattle(){
         for (Pirate pirate : this.pirates) {
             for(int count=0; count<5; count++) {

@@ -27,10 +27,6 @@ public class Pirate {
         return goldAmount;
     }
 
-    public int getHealthPoints() {
-        return healthPoints;
-    }
-
     public boolean getHasWoodenLeg(){
         return this.hasWoodenLeg;
     }
@@ -39,8 +35,9 @@ public class Pirate {
         return this.captain;
     }
 
+    // increase amount of gold and healthpoints
     public void work(){
-        if(isCaptain()) {
+        if(this.isCaptain()) {
             if (this.healthPoints > 5) {
                 this.goldAmount += 10;
                 this.healthPoints -= 5;
@@ -54,7 +51,7 @@ public class Pirate {
     }
 
     public void party(){
-        if(isCaptain()) {
+        if(this.isCaptain()) {
             this.healthPoints += 10;
         } else {
             this.healthPoints += 1;
@@ -63,7 +60,7 @@ public class Pirate {
 
     @Override
     public String toString() {
-        if(getHasWoodenLeg()) {
+        if(this.getHasWoodenLeg()) {
             return "Hello I'm " + this.getName() + ". " + "I have a wooden leg and " +
                     this.getGoldAmount() + " golds";
         } else {

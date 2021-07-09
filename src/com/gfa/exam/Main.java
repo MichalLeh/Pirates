@@ -3,27 +3,33 @@ package com.gfa.exam;
 public class Main {
 
     public static void main(String[] args) {
+        // init
         Ship ship = new Ship();
+        Pirate blackbeard = new Pirate("Blackbeard");
+        Pirate johnSilver = new Pirate("John Silver");
+        Pirate jFlint = new Pirate("J. Flint");
+        Pirate henryMorgan = new Pirate("Henry Morgan");
+        Pirate francisDrake = new Pirate("Francis Drake");
 
-        Pirate jack = new Pirate("Jack");
-        Pirate john = new Pirate("John");
-        Pirate silver = new Pirate("Silver");
-        Pirate mike = new Pirate("Mike");
-
-        ship.add(jack);
-        ship.add(john);
-        ship.add(silver);
-        ship.add(mike);
+        // add pirates to the ship
+        ship.add(blackbeard);
+        ship.add(johnSilver);
+        ship.add(jFlint);
+        ship.add(henryMorgan);
+        ship.add(francisDrake);
 
         ship.prepareForBattle();
 
-        System.out.println(jack.toString());
-        System.out.println(john.toString());
-        System.out.println(silver.toString());
-        System.out.println(mike.toString());
+        System.out.println(blackbeard);
+        System.out.println(johnSilver);
+        System.out.println(jFlint);
+        System.out.println(henryMorgan);
+        System.out.println(francisDrake);
 
-        System.out.println(ship.getGolds());
-        System.out.println(ship.getCrewSize());
-        System.out.println(ship.getPoorPirates());
+        System.out.println("");
+
+        System.out.println("Amount of gold: " + ship.getGolds());
+        System.out.println("Crew size: " + ship.getCrewSize());
+        System.out.println("Poor pirates: " + ship.getPoorPirates());
     }
 }
