@@ -11,6 +11,22 @@ public class Ship {
         this.poorPirates = new ArrayList<>();
     }
 
+    public void add(Pirate pirate) {
+        if(!pirate.isCaptain()) {
+            this.pirates.add(pirate);
+        } else {
+            boolean shipHasCaptain = false;
+            for(int i=0; i<this.pirates.size(); i++){
+                if(this.pirates.get(i).isCaptain()){
+                    shipHasCaptain = true;
+                }
+            }
+            if (shipHasCaptain == false){
+                this.pirates.add(pirate);
+            }
+        }
+    }
+
     public int getCrewSize(){
         return this.pirates.size();
     }
