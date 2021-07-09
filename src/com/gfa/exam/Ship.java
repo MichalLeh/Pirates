@@ -32,9 +32,18 @@ public class Ship {
         return sumOfGold;
     }
 
-    public void lastDayOnTheShip(){
-        for(Pirate pirate : this.pirates){
-            pirate.party();
+    public void lastDayOnTheShip(Pirate pirate){
+        pirate.party();
+    }
+
+    public void prepareForBattle(){
+        for (Pirate pirate : this.pirates) {
+            for(int count=0; count<5; count++) {
+                pirate.work();
+                if(count == 4){
+                    lastDayOnTheShip(pirate);
+                }
+            }
         }
     }
 }
